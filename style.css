@@ -59,6 +59,7 @@ section.poem + section.poem {
 @media (max-width: 600px) {
   section.poem {
     padding: 3rem 1.5rem;
+    padding-bottom: 30vh;
   }
 
   section.poem pre {
