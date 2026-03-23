@@ -1,17 +1,86 @@
-body
-{
-    background-color: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-pre
-{
-    font-family: 'Arial', sans-serif;
-    color: black;
-    letter-spacing: 0; 
-    margin: 10em;
-    padding: 0em;
-    white-space: pre-wrap;       /* Since CSS 2.1 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 601px) {
+  html {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
+section.poem {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding: 4rem 2rem;
+}
+
+section.poem pre {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 38em;
+  width: 100%;
+}
+
+section.poem pre .title {
+  display: block;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.15em;
+}
+
+section.poem pre .byline {
+  display: block;
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #888;
+  margin-bottom: 1.5em;
+}
+
+/* Subtle divider between poems */
+section.poem + section.poem {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  section.poem {
+    padding: 3rem 1.5rem;
+  }
+
+  section.poem pre {
+    font-size: 0.95rem;
+  }
+
+  section.poem pre .title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  section.poem pre {
+    font-size: 1.15rem;
+  }
+
+  section.poem pre .title {
+    font-size: 1.65rem;
+  }
 }
